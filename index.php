@@ -5,6 +5,13 @@
     // includere function.php nel file
     include __DIR__. '/partials/function.php';
 
+    $password = $_GET['password'];
+    var_dump($password);
+
+    $random_password = getPassword($password);
+    var_dump($random_password);
+
+
 ?>
 
 <!DOCTYPE html>
