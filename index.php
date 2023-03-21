@@ -5,7 +5,7 @@
     // includere function.php nel file
     include __DIR__. '/partials/function.php';
 
-    $password = is_numeric($_GET['password']) && true;
+    $password = $_GET['password'];
     var_dump($password);
 
     $random_password = getPassword($password);
@@ -17,6 +17,10 @@
         $_SESSION['password'] = $random_password;
         header('Location: ./password.php');
     }
+
+
+    $same_character = isset($_GET['character']);
+    var_dump($same_character);
 
 ?>
 
@@ -69,6 +73,14 @@
             <div class="container">
                 <form action="./index.php" method="GET">
                     <input type="text" name="password" placeholder="Lunghezza password...">
+
+                    <input type="radio" name="character" value="si"> Si
+                    <input type="radio" name="character" value="no"> No
+
+                    <input type="checkbox"> Lettere
+                    <input type="checkbox"> Numeri
+                    <input type="checkbox"> Speciali
+
                     
                     <input type="submit">
                 </form>

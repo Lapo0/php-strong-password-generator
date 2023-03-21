@@ -8,13 +8,12 @@ var_dump($_GET);
         var_dump(($psw_letters));
 
         $psw_numbers = '1234567890';
-        $psw_specials = '<>,;.:-_?^!"£$%&/()';
-
+        $psw_specials = '<>,;.:-_?^!"£$%&/()'; 
         
         $random_password = "";
 
         // creare ciclo per andare a prendre TOT caratteri quanti ne ha stabiliti l'utente nell'input
-        for ($i = 0; $i < $_GET['password']; $i++) {
+        for ($i = 0; $i < $lenght; $i++) {
             var_dump($i +1);
 
             // prendere TOT indici casuali dalla stringa $psw
