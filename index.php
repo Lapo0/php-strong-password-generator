@@ -2,25 +2,30 @@
 
     var_dump($_GET);
 
+    // dichirare password presa dall'input
     $password = is_numeric($_GET['password']) && true;
     var_dump($password);
 
+    // creare $psw con tutti i caratteri alfabetici inseribili
     $psw = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var_dump($psw);
 
+    
     $random_password = "";
 
+    // creare ciclo per andare a prendre TOT caratteri quanti ne ha stabiliti l'utente nell'input
     for ($i = 0; $i < $_GET['password']; $i++) {
         var_dump($i);
 
+        // prendere TOT indici casuali dalla stringa $psw
         $random_index = random_int(0, strlen($psw));
-        var_dump($random_index)
+        var_dump($random_index);
+
+        // concatenare a $random_password tutti gli indici che sono stati creati con il ciclo
+        $random_password .= $psw[$random_index];
     }
-
-    var_dump($random_password);
-
-
     
+    var_dump($random_password);
 
 ?>
 
@@ -49,9 +54,24 @@
 
             <div class="container">
                 <div class="row bg-primary-subtle rounded my-4">
-                    <p class="fs-4 m-0 py-3">
-                        Nessun parametro inserito
-                    </p>
+                    <?php 
+                        // se $random_password è vuoto...
+                        if (empty($random_password)) {
+                            ?>
+                                <p class="fs-4 m-0 py-3">
+                                    Nessun parametro inserito
+                                </p>
+                            <?php
+                          // altrimenti stampa la $password_random...
+                        } else {
+                            ?>
+                                <p class="fs-4 m-0 py-3">
+                                    La tua password è : 
+                                    <?php echo $random_password ?>
+                                </p>
+                            <?php
+                        }
+                    ?>
                 </div>
             </div>
 
