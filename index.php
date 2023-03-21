@@ -11,6 +11,8 @@
     $random_password = getPassword($password);
     var_dump($random_password);
 
+  
+
 
 ?>
 

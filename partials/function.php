@@ -7,6 +7,9 @@ var_dump($_GET);
         $psw_letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         var_dump(($psw_letters));
 
+        $psw_numbers = '1234567890';
+        $psw_specials = '<>,;.:-_?^!"£$%&/()';
+
         
         $random_password = "";
 
