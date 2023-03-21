@@ -5,14 +5,18 @@
     // includere function.php nel file
     include __DIR__. '/partials/function.php';
 
-    $password = $_GET['password'];
+    $password = is_numeric($_GET['password']) && true;
     var_dump($password);
 
     $random_password = getPassword($password);
     var_dump($random_password);
 
-  
+    session_start();
 
+    if ($password) {
+        $_SESSION['password'] = $random_password;
+        header('Location: ./password.php');
+    }
 
 ?>
 

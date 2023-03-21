@@ -1,13 +1,14 @@
 <?php
+    session_start();
 
-    include __DIR__. '/index.php'
-
+    
 ?>
 
 <h1>
+    LA tua password è : 
     <?php
-
-        $random_password
+    
+        echo   $_SESSION['password'];
 
     ?>
 </h1>
