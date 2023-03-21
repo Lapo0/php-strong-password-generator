@@ -1,31 +1,9 @@
-<?php 
+<?php
 
-    var_dump($_GET);
+    var_dump(__DIR__);
 
-    // dichirare password presa dall'input
-    $password = is_numeric($_GET['password']) && true;
-    var_dump($password);
-
-    // creare $psw con tutti i caratteri alfabetici inseribili
-    $psw = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var_dump($psw);
-
-    
-    $random_password = "";
-
-    // creare ciclo per andare a prendre TOT caratteri quanti ne ha stabiliti l'utente nell'input
-    for ($i = 0; $i < $_GET['password']; $i++) {
-        var_dump($i);
-
-        // prendere TOT indici casuali dalla stringa $psw
-        $random_index = random_int(0, strlen($psw));
-        var_dump($random_index);
-
-        // concatenare a $random_password tutti gli indici che sono stati creati con il ciclo
-        $random_password .= $psw[$random_index];
-    }
-    
-    var_dump($random_password);
+    // includere function.php nel file
+    include __DIR__. '/partials/function.php';
 
 ?>
 
