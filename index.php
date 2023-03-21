@@ -11,6 +11,7 @@
     $random_password = getPassword($password);
     var_dump($random_password);
 
+    // far partire la sessione
     session_start();
 
     if ($password) {
@@ -21,6 +22,11 @@
 
     $same_character = isset($_GET['character']);
     var_dump($same_character);
+    if ($same_character === 'si') {
+        var_dump('ciao');
+    }
+    // SE SI funzione simile a getPassword ma devo verificare prima se l'indice che 
+    // vado a pushare dentro $random_index non sia già incluso
 
 ?>
 
@@ -48,7 +54,7 @@
             </div>
 
             <div class="container">
-                <div class="row bg-primary-subtle rounded my-4">
+                <div class="row bg-primary-subtle rounded my-4 text-center">
                     <?php 
                         // se $random_password è vuoto...
                         if (empty($random_password)) {
@@ -77,9 +83,9 @@
                     <input type="radio" name="character" value="si"> Si
                     <input type="radio" name="character" value="no"> No
 
-                    <input type="checkbox"> Lettere
-                    <input type="checkbox"> Numeri
-                    <input type="checkbox"> Speciali
+                    <input type="checkbox" name="letters"> Lettere
+                    <input type="checkbox" name="numbers"> Numeri
+                    <input type="checkbox" name="specials"> Speciali
 
                     
                     <input type="submit">
